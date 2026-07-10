@@ -62,28 +62,20 @@
       gap: 20px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      color: var(--navy);
-      letter-spacing: -0.03em;
-      font-size: 22px;
-    }
+   .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  color: var(--navy);
+  text-decoration: none;
+}
 
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--navy), var(--sage));
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 18px;
-    }
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
 
     .nav-links {
       display: flex;
@@ -612,10 +604,10 @@
 
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">
-        <div class="brand-mark">A</div>
-        <span>Ayla Strategy Group</span>
-      </div>
+     <div class="brand">
+  <img src="assets/logo.png" alt="Ayla Strategy Group logo" class="brand-logo">
+  <span>Ayla Strategy Group</span>
+</div>
 
       <div class="nav-links">
         <a href="#why">Why ALU / ADU</a>
