@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ayla Strategy Group | Northern Virginia Property Opportunity Research</title>
+  <meta name="description" content="Ayla Strategy Group helps homeowners, realtors, and investors in Northern Virginia screen properties for ALU/ADU potential, rental upside, future resale appeal, and private family living flexibility." />
+
+  <style>
+    :root {
+      --navy: #0f2347;
+      --navy-soft: #17365f;
+      --sage: #6f8f72;
+      --sage-dark: #547057;
+      --sand: #f4eadc;
+      --sand-light: #fbf7f0;
+      --cream: #fffaf2;
+      --text: #172033;
+      --muted: #66758c;
+      --border: #e5e0d7;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(15, 35, 71, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--sand-light);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav {
+      background: rgba(255, 250, 242, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+      font-size: 22px;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--navy), var(--sage));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--sage-dark);
+    }
+
+    .nav-cta {
+      background: var(--navy);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(15, 35, 71, 0.18);
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(255,250,242,0.98) 0%, rgba(255,250,242,0.92) 38%, rgba(255,250,242,0.12) 68%),
+        url("assets/hero-home.png");
+      background-size: cover;
+      background-position: center right;
+      padding: 88px 0 76px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 640px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eef4ec;
+      color: var(--sage-dark);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      border: 1px solid #dbe8d8;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: 58px;
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      color: var(--navy);
+    }
+
+    .accent-sage {
+      color: var(--sage-dark);
+    }
+
+    .hero-sub {
+      font-size: 19px;
+      color: #35425a;
+      max-width: 590px;
+      margin: 0 0 20px;
+    }
+
+    .invest-note {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--sage);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 24px 0;
+      color: var(--navy);
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(15,35,71,0.06);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--sage-dark);
+      color: white;
+      padding: 15px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 0;
+      transition: 0.2s ease;
+      box-shadow: 0 10px 24px rgba(84,112,87,0.20);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background: var(--sage);
+    }
+
+    .button.navy {
+      background: var(--navy);
+      box-shadow: 0 10px 24px rgba(15,35,71,0.22);
+    }
+
+    .button.navy:hover {
+      background: var(--navy-soft);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.75);
+      color: var(--navy);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 34px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 38px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .cards-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 22px;
+      letter-spacing: -0.025em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #eef4ec;
+      color: var(--sage-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 21px;
+      margin-bottom: 16px;
+    }
+
+    .soft-section {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .value-strip {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .value-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 14px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .investor-box {
+      background: var(--navy);
+      color: white;
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .investor-box h2 {
+      margin: 0 0 14px;
+      font-size: 34px;
+      line-height: 1.14;
+      letter-spacing: -0.04em;
+    }
+
+    .investor-box p {
+      color: #dbe5f4;
+      margin: 0 0 18px;
+      font-size: 16px;
+    }
+
+    .example-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .example-title {
+      text-align: center;
+      color: var(--navy);
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .metric {
+      background: var(--sand-light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .metric-label {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .metric-value {
+      color: var(--navy);
+      font-size: 20px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .metric-value.sage {
+      color: var(--sage-dark);
+    }
+
+    .small-disclaimer {
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 26px rgba(15,35,71,0.06);
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: var(--sage-dark);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .step-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 19px;
+    }
+
+    .step-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .video-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 10px 26px rgba(15,35,71,0.06);
+    }
+
+    .play {
+      width: 62px;
+      height: 62px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      font-size: 22px;
+    }
+
+    .video-card h3 {
+      margin: 0 0 6px;
+      color: var(--navy);
+      font-size: 18px;
+    }
+
+    .video-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .receive {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .checklist li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 13px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .checkmark {
+      color: var(--sage-dark);
+      font-weight: 900;
+    }
+
+    .report-img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      display: block;
+    }
+
+    .final-cta {
+      background:
+        linear-gradient(135deg, rgba(15,35,71,0.94), rgba(84,112,87,0.88)),
+        url("assets/hero-home.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 72px 0;
+    }
+
+    .final-box {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .final-box h2 {
+      margin: 0 0 14px;
+      font-size: 40px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .final-box p {
+      color: #eef4ec;
+      font-size: 18px;
+      margin: 0 0 26px;
+    }
+
+    .footer {
+      background: #071226;
+      color: #cbd5e1;
+      padding: 28px 0;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .legal {
+      background: #050d1c;
+      color: #aab6c8;
+      font-size: 13px;
+      padding: 22px 0;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 980px) {
+      h1 {
+        font-size: 44px;
+      }
+
+      .hero {
+        background:
+          linear-gradient(rgba(255,250,242,0.94), rgba(255,250,242,0.94)),
+          url("assets/hero-home.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .cards-3,
+      .cards-4,
+      .steps-grid,
+      .metrics,
+      .split,
+      .receive {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-mark">A</div>
+        <span>Ayla Strategy Group</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#why">Why ALU / ADU</a>
+        <a href="#investor">Investor Lens</a>
+        <a href="#how">How It Works</a>
+        <a href="#receive">What You Get</a>
+      </div>
+
+      <a class="nav-cta" href="https://forms.gle/fS6t3hq7xnmYNGzD9" target="_blank">Check My Property First</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Northern Virginia Property Opportunity Research</div>
+
+        <h1>
+          Could Your Home Have
+          <span class="accent-sage">More Income, More Value,</span>
+          and More Flexibility?
+        </h1>
+
+        <p class="hero-sub">
+          Your property may have hidden ALU / ADU potential — not only for rental income, but also for future resale appeal and private space for family or loved ones.
+        </p>
+
+        <div class="invest-note">
+          Check if your property may qualify before you invest.
+          <br />
+          <span style="font-weight:700;color:#66758c;">Smart planning starts with screening, not construction.</span>
+        </div>
+
+        <div class="cta-row">
+          <a class="button navy" href="https://forms.gle/fS6t3hq7xnmYNGzD9" target="_blank">
+            Check My Property First →
+          </a>
+          <a class="button secondary" href="#why">
+            Learn What We Look For
+          </a>
+        </div>
+
+        <div class="trust-row">
+          <span>✓ No obligation</span>
+          <span>✓ Your information stays private</span>
+          <span>✓ Serving Northern Virginia</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="who">
+    <div class="container">
+      <div class="section-title">
+        <h2>Who We Help</h2>
+        <p>One property can mean different opportunities depending on your goal.</p>
+      </div>
+
+      <div class="cards-3">
+        <div class="card">
+          <div class="icon">🏡</div>
+          <h3>For Homeowners</h3>
+          <p>
+            Discover whether your property may have hidden rental, ALU/ADU, family-space, or future resale value before you sell, refinance, renovate, or rent.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔑</div>
+          <h3>For Realtors</h3>
+          <p>
+            Add property opportunity insights to your listing strategy, especially for homes with basements, large lots, separate entrances, or rental-upside potential.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📈</div>
+          <h3>For Investors</h3>
+          <p>
+            Screen properties before you invest. Identify ALU/ADU signals, rental upside, payback potential, and resale-value opportunities faster.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="soft-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>The Value Is Not Only Rent — It Is Optionality</h2>
+        <p>A compliant added living space can support more than one financial or family goal.</p>
+      </div>
+
+      <div class="value-strip">
+        <div class="cards-4">
+          <div>
+            <div class="icon">$</div>
+            <h3>Potential Income</h3>
+            <p>A compliant added living space may generate rental income and help offset housing costs.</p>
+          </div>
+
+          <div>
+            <div class="icon">↗</div>
+            <h3>Future Property Value</h3>
+            <p>Flexible living potential may improve buyer appeal and strengthen future resale positioning.</p>
+          </div>
+
+          <div>
+            <div class="icon">👨‍👩‍👧</div>
+            <h3>Private Family Space</h3>
+            <p>Create comfortable, independent space for parents, relatives, adult children, or loved ones.</p>
+          </div>
+
+          <div>
+            <div class="icon">✓</div>
+            <h3>Smarter Planning</h3>
+            <p>Understand the opportunity signals before investing in design, permits, builders, or construction.</p>
+          </div>
+        </div>
+
+        <div class="value-note">
+          Estimated outcomes vary by property, design, compliance, market conditions, and buyer demand. No result is guaranteed.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="investor">
+    <div class="container split">
+      <div class="investor-box">
+        <h2>Think Like an Investor Before You Spend Like an Owner.</h2>
+        <p>
+          A property may look promising, but the real question is whether the layout, lot, parking, access, zoning-related signals, rental demand, and estimated cost make the project worth exploring.
+        </p>
+        <p>
+          We help you ask the right questions before spending money on design, permits, builders, or construction.
+        </p>
+
+        <a class="button" href="https://forms.gle/fS6t3hq7xnmYNGzD9" target="_blank">
+          Request an ALU / Rental Upside Screening →
+        </a>
+      </div>
+
+      <div class="example-box">
+        <div class="example-title">A Simple Illustrative Example</div>
+
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Estimated Project Cost</div>
+            <div class="metric-value">$60k – $85k</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Potential Rent</div>
+            <div class="metric-value">$1,900 – $2,500/mo</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Simple Gross Payback</div>
+            <div class="metric-value sage">About 2.5 – 3.7 years</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Potential Value Impact</div>
+            <div class="metric-value sage">$30k – $80k+</div>
+          </div>
+        </div>
+
+        <div class="small-disclaimer">
+          Illustrative example only. Actual results depend on permits, construction cost, financing, vacancy, taxes, insurance, maintenance, market rent, buyer demand, and compliance.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="soft-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>How It Works</h2>
+        <p>Clear steps. No guesswork. Start with one address.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Submit Your Property Address</h3>
+          <p>Send us the address and tell us whether you are a homeowner, realtor, investor, or builder.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>We Screen the Opportunity Signals</h3>
+          <p>We review public records, lot size, layout, basement potential, entrance, parking, rental context, and investor appeal.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>You Receive a Clear Snapshot</h3>
+          <p>You receive a simple summary showing opportunity signals, rental upside, family-use flexibility, value impact, and next steps.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Decide Your Next Step</h3>
+          <p>If promising, you can speak with a builder, contractor, architect, zoning professional, or realtor before you invest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Short Educational Videos Coming Soon</h2>
+        <p>Simple homeowner-friendly explanations before making expensive decisions.</p>
+      </div>
+
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="play">▶</div>
+          <h3>What Is ALU / ADU Potential?</h3>
+          <p>Video coming soon</p>
+        </div>
+
+        <div class="video-card">
+          <div class="play">▶</div>
+          <h3>How Rental Upside & Payback Work</h3>
+          <p>Video coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="receive" class="soft-section">
+    <div class="container receive">
+      <div>
+        <h2 style="color:var(--navy);font-size:36px;line-height:1.15;margin:0 0 18px;letter-spacing:-0.04em;">
+          What You Receive
+        </h2>
+
+        <ul class="checklist">
+          <li><span class="checkmark">✓</span> ALU / ADU opportunity signals</li>
+          <li><span class="checkmark">✓</span> Rental income potential estimate</li>
+          <li><span class="checkmark">✓</span> Potential future value impact range</li>
+          <li><span class="checkmark">✓</span> Private family-space flexibility ideas</li>
+          <li><span class="checkmark">✓</span> Investor angles and risks to consider</li>
+          <li><span class="checkmark">✓</span> Clear next-step recommendations</li>
+        </ul>
+      </div>
+
+      <div>
+        <img class="report-img" src="assets/report-preview.png" alt="Property opportunity report preview">
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container final-box">
+      <h2>Want to Know If Your Property Is Worth a Closer Look?</h2>
+      <p>
+        Submit your address and request a simple screening for ALU / ADU potential, rental upside, family-space flexibility, and future value impact.
+      </p>
+
+      <a class="button" href="https://forms.gle/fS6t3hq7xnmYNGzD9" target="_blank">
+        See If My Property Is Worth Exploring →
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>Ayla Strategy Group</strong></div>
+      <div>Northern Virginia Property Opportunity Research</div>
+      <div>hello@aylastrategygroup.com</div>
+    </div>
+  </footer>
+
+  <section class="legal">
+    <div class="container">
+      <strong>Important Disclaimer:</strong>
+      Ayla Strategy Group provides informational and AI-assisted property research only. Reports are not official county records, appraisals, legal opinions, zoning determinations, permit approvals, construction estimates, consumer reports, or investment advice. ALU / ADU potential, rental income examples, payback examples, future value impact, investor appeal, and property opportunity signals are not guaranteed. All findings should be independently verified with Fairfax County, licensed real estate professionals, zoning professionals, attorneys, contractors, builders, tax advisors, insurance advisors, and other qualified experts.
+    </div>
+  </section>
+
+</body>
+</html>
