@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fairfax County ADU & Property Opportunity Reports | Ayla Strategy Group</title>
+  <meta name="description" content="Ayla Strategy Group helps homeowners, realtors, and investors in Northern Virginia identify ADU/ALU potential, rental upside, and investor positioning opportunities through property research snapshots." />
+
+  <style>
+    :root {
+      --navy: #0f172a;
+      --navy-light: #1e293b;
+      --blue: #0ea5e9;
+      --blue-dark: #0284c7;
+      --green: #10b981;
+      --gray-bg: #f8fafc;
+      --text: #1f2937;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--gray-bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    nav {
+      background: var(--navy);
+      color: white;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(14,165,233,0.22), transparent 34%),
+        linear-gradient(135deg, #0f172a 0%, #111827 55%, #1e293b 100%);
+      color: white;
+      padding: 96px 0 84px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #bae6fd;
+      background: rgba(14,165,233,0.14);
+      border: 1px solid rgba(186,230,253,0.22);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: 56px;
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      margin: 0 0 24px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #e2e8f0;
+      margin: 0 0 32px;
+      max-width: 720px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 15px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.2s ease;
+      border: 0;
+    }
+
+    .button:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.24);
+      color: white;
+    }
+
+    .button.secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(12px);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.25);
+    }
+
+    .score-box {
+      background: white;
+      color: var(--text);
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .score-label {
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+
+    .score-number {
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 900;
+      color: var(--green);
+      margin-top: 10px;
+    }
+
+    .mini-list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+
+    .mini-list li {
+      padding: 8px 0;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #e2e8f0;
+      font-size: 15px;
+    }
+
+    .check {
+      color: #86efac;
+      font-weight: 900;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-header h2 {
+      font-size: 40px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      margin: 0 0 14px;
+      color: var(--navy);
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 12px 36px rgba(15,23,42,0.06);
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #e0f2fe;
+      color: #0369a1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .report-preview {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(15,23,42,0.08);
+    }
+
+    .report-top {
+      background: var(--navy);
+      color: white;
+      padding: 20px 24px;
+      font-weight: 800;
+    }
+
+    .report-body {
+      padding: 24px;
+    }
+
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .metric:last-child {
+      border-bottom: 0;
+    }
+
+    .metric span:first-child {
+      color: var(--muted);
+    }
+
+    .metric span:last-child {
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      position: relative;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cta-section {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 76px 24px;
+    }
+
+    .cta-section h2 {
+      font-size: 42px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      margin: 0 0 16px;
+    }
+
+    .cta-section p {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 720px;
+      margin: 0 auto 28px;
+    }
+
+    .disclaimer {
+      background: #eef2f7;
+      border-top: 1px solid var(--border);
+      padding: 34px 0;
+      color: #475569;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #020617;
+      color: #cbd5e1;
+      padding: 26px 0;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .cards,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">Ayla Strategy Group</div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#report">Reports</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Submit Address</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Northern Virginia Property Intelligence</div>
+        <h1>Find Out If a Property Has Hidden ADU, Rental, or Investor Value</h1>
+        <p>
+          Ayla Strategy Group helps homeowners, realtors, and investors identify hidden property opportunities in Northern Virginia, including ADU/ALU potential, rental upside, and investor positioning.
+        </p>
+        <div class="cta-row">
+          <a class="button" href="https://forms.gle/GZpqCceoRA14z8Lp6" target="_blank">
+            Submit a Property Address
+          </a>
+          <a class="button secondary" href="#services">
+            View Services
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="score-box">
+          <div class="score-label">Example Opportunity Score</div>
+          <div class="score-number">82/100</div>
+          <p style="margin: 12px 0 0; color: #64748b;">
+            AI-assisted research snapshot for ADU/ALU signals, rental upside, and investor appeal.
+          </p>
+        </div>
+
+        <ul class="mini-list">
+          <li><span class="check">✓</span> Basement, lot, parking, and entrance potential</li>
+          <li><span class="check">✓</span> Public record and zoning signal review</li>
+          <li><span class="check">✓</span> Investor positioning and next-step recommendations</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Property research designed for action.</h2>
+        <p>
+          We turn scattered public information into a clear opportunity snapshot so you can decide whether a property is worth deeper review, marketing, or investor outreach.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">A</div>
+          <h3>ADU / ALU Potential</h3>
+          <p>
+            Review property signals that may support accessory living unit, basement rental, multi-generational living, or future rental-income use cases.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">$</div>
+          <h3>Rental Upside</h3>
+          <p>
+            Identify possible rental-income angles, nearby demand drivers, and investor-friendly positioning opportunities.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">I</div>
+          <h3>Investor Positioning</h3>
+          <p>
+            Help realtors and sellers understand how a property may appeal to landlords, house hackers, builders, or investor buyers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="background: white;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Services for homeowners, realtors, and investors.</h2>
+        <p>
+          Choose the research snapshot that matches your goal.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>For Homeowners</h3>
+          <p>
+            Discover whether your property may have hidden rental, ADU/ALU, or investor value before you sell, refinance, renovate, or rent.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>For Realtors</h3>
+          <p>
+            Add investor-focused insights and property opportunity language to your listing strategy, especially for older homes, large lots, or rental-upside properties.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>For Investors</h3>
+          <p>
+            Screen properties faster and identify potential ADU, rental, high-equity, large-lot, or redevelopment opportunity signals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="report">
+    <div class="container split">
+      <div>
+        <div class="section-header">
+          <h2>What your snapshot can include.</h2>
+          <p>
+            Each review is designed to be simple, practical, and easy to understand. The goal is not to overwhelm you with raw data, but to highlight what may matter.
+          </p>
+        </div>
+      </div>
+
+      <div class="report-preview">
+        <div class="report-top">Sample Property Opportunity Snapshot</div>
+        <div class="report-body">
+          <div class="metric">
+            <span>ADU / ALU Signals</span>
+            <span>Strong</span>
+          </div>
+          <div class="metric">
+            <span>Rental Upside</span>
+            <span>Moderate-High</span>
+          </div>
+          <div class="metric">
+            <span>Investor Appeal</span>
+            <span>High</span>
+          </div>
+          <div class="metric">
+            <span>Review Priority</span>
+            <span>Worth Deeper Review</span>
+          </div>
+          <div class="metric">
+            <span>Next Step</span>
+            <span>Zoning + Contractor Check</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="background: white;">
+    <div class="container">
+      <div class="section-header">
+        <h2>How it works.</h2>
+        <p>
+          Start with one address. We organize the public information and opportunity signals into a clear research summary.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <h3>Submit an Address</h3>
+          <p>
+            Send the property address and tell us whether you are a homeowner, realtor, investor, or builder.
+          </p>
+        </div>
+
+        <div class="step">
+          <h3>We Research the Property</h3>
+          <p>
+            We review public records, lot characteristics, zoning signals, market context, and rental-use possibilities.
+          </p>
+        </div>
+
+        <div class="step">
+          <h3>Receive a Clear Snapshot</h3>
+          <p>
+            You receive a practical summary of possible upside, risk flags, and recommended next steps.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta-section">
+    <div class="container">
+      <h2>Curious what a property could be worth to the right buyer?</h2>
+      <p>
+        Submit an address and request a property opportunity review for ADU/ALU potential, rental upside, or investor positioning.
+      </p>
+      <a class="button" href="https://forms.gle/GZpqCceoRA14z8Lp6" target="_blank">
+        Request a Property Opportunity Review
+      </a>
+    </div>
+  </section>
+
+  <section class="disclaimer">
+    <div class="container">
+      <strong>Important Disclaimer:</strong>
+      Ayla Strategy Group provides informational and AI-assisted property research only. Reports are not official county records, appraisals, legal opinions, zoning determinations, permit approvals, consumer reports, or investment advice. All findings should be verified with Fairfax County, licensed real estate professionals, zoning professionals, attorneys, contractors, or other qualified experts.
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Ayla Strategy Group</div>
+      <div>Northern Virginia Property Opportunity Research</div>
+    </div>
+  </footer>
+
+</body>
+</html>
